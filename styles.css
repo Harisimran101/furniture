@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#interface {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     border-radius: 50px;
+     position: absolute;
+     bottom: 40px;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     background: white;
+     box-shadow: 0 1.5px 3px rgba(0,0,0,0.3);
+     padding: 10px 12px;
+}
+
+.color-item {
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     cursor: pointer;
+}
+
+.option-4 {
+  
+    background-size: cover;
+    background-position: center;
+}
+
+.option-5 {
+
+    background-size: cover;
+    background-position: center;
+}
