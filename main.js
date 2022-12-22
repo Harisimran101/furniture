@@ -26,7 +26,9 @@ controls.maxPolarAngle = Math.PI /2.1
 let textureloader = new THREE.TextureLoader()
 
 let texturematerial = new THREE.MeshStandardMaterial({
-    map: textureloader.load('images/wood.jpg')
+    map: textureloader.load('images/wood.jpg'),
+    metalness: 0.6,
+    roughness: 0.2
 })
 
 function colors(material){
@@ -75,6 +77,13 @@ loader.load('model.glb', (gltf) =>{
      })
 
      colors(mainmaterial)
+
+     console.log( scene.getObjectByName('furniture').scale.x)
+
+    document.querySelector('#scale-value').addEventListener('input', (e) =>{
+         scene.getObjectByName('furniture').scale.x = e.target.value
+    })
+
 })
 
 			camera.position.z = 6;
