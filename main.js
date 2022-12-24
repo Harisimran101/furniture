@@ -39,11 +39,12 @@ function colors(material){
             if(e.target.id){
                 texturematerial.map = textureloader.load(e.target.id)
                  scene.getObjectByName('furniture').material = texturematerial
-  
+                 scene.getObjectByName('upper-piece').material = texturematerial
                }
   
              if(e.target.style.background){
                 scene.getObjectByName('furniture').material = material
+                scene.getObjectByName('upper-piece').material = material
 
               material.color.set(new THREE.Color(e.target.style.background))
 
@@ -81,7 +82,12 @@ loader.load('model.glb', (gltf) =>{
      console.log( scene.getObjectByName('furniture').scale.x)
 
     document.querySelector('#scale-value').addEventListener('input', (e) =>{
-         scene.getObjectByName('furniture').scale.x = e.target.value
+        console.log(scene.getObjectByName('Metal-stand'))
+    scene.getObjectByName('Metal-stand').morphTargetInfluences[0]= e.target.value
+    scene.getObjectByName('upper-piece').morphTargetInfluences[0]= e.target.value
+    scene.getObjectByName('furniture').morphTargetInfluences[0]= e.target.value
+
+        //  scene.getObjectByName('furniture').scale.x = e.target.value
     })
 
 })
